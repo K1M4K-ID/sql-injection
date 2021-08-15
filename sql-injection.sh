@@ -566,7 +566,7 @@ edump () {
                        then
                           if [ -f .output ];then
                              echo -e "${N}+$coi+"
-                             echo -n -e "${N}${G}[${N}1${G}]${N} dump lagi\n${N}${G}[${N}2${G}]${N} kembali ke database awal${N}${G}\n[${N}3${G}].${N} kembali\n"
+                             echo -n -e "${N}${G}[${N}1${G}]${N} dump lagi\n${N}${G}[${N}2${G}]${N} kembali ke database awal${N}${G}\n[${N}3${G}]${N} kembali\n"
                              if [[ "$masn" = "y" ]];then
                                 echo -en "\n${BL}biarkan kosong lalu tekan ENTER skip to next site${N}"
                              fi
@@ -590,7 +590,7 @@ edump () {
                           else
                              echo -e "KOSONG\n${N}+$coi+"
                              echo -e "${R}\033[2mF A I L E D try dump dios manual$N\n\033[2mpastikan input yg dimasukan sudah benar atau periksa koneksi\njika input sudah benar kemungkinan colomn yg di tuju kosong${N}"
-                             echo -n -e "${N}${G}[${N}1${G}]${N} dump lagi\n${N}${G}[${N}2${G}]${N} kembali ke database awal${N}${G}\n[${N}3${G}].${N} kembali\n"
+                             echo -n -e "${N}${G}[${N}1${G}]${N} dump lagi\n${N}${G}[${N}2${G}]${N} kembali ke database awal${N}${G}\n[${N}3${G}]${N} kembali\n"
                              if [[ "$masn" = "y" ]];then
                                 echo -en "\n${BL}biarkan kosong lalu tekan ENTER skip to next site${N}"
                              fi
@@ -619,7 +619,7 @@ edump () {
                     done
                     trap - INT
                     echo -e "${N}+$coi+"
-                    echo -n -e "${N}${G}[${N}1${G}]${N} dump lagi\n${N}${G}[${N}2${G}]${N} kembali ke database awal${N}${G}\n[${N}3${G}].${N} kembali\n"
+                    echo -n -e "${N}${G}[${N}1${G}]${N} dump lagi\n${N}${G}[${N}2${G}]${N} kembali ke database awal${N}${G}\n[${N}3${G}]${N} kembali\n"
                     if [[ "$masn" = "y" ]];then
                        echo -en "\n${BL}biarkan kosong lalu tekan ENTER skip to next site${N}"
                     fi
@@ -1279,7 +1279,7 @@ dump() {
                             if [[ "$ump" = "r" ]]
                             then
                                echo -e "${N}[${O}INFO${N}] ${O}F A I L E D try dump dios manual$N\n\033[2mpastikan input yg dimasukan sudah benar atau periksa koneksi\njika input sudah benar kemungkinan colomn yg di tuju kosong${N}"
-                               echo -n -e "${N}${G}[${N}1${G}]${N} dump lagi\n${N}${G}[${N}2${G}]${N} kembali ke database awal${N}${G}\n[${N}3${G}].${N} kembali\n"
+                               echo -n -e "${N}${G}[${N}1${G}]${N} dump lagi\n${N}${G}[${N}2${G}]${N} kembali ke database awal${N}${G}\n[${N}3${G}]${N} kembali\n"
                                if [[ "$masn" = "y" ]];then
                                echo -en "\n${G}\033[2mpress ctrl/vol + D skip to next site${N}"
                                fi
@@ -1367,7 +1367,7 @@ dump() {
                                   done
                                   cat output/$dir/dump-$table.txt | grep -v gmail | grep -v yahoo | grep -v aol | grep -v hotmail >> others.txt
                                   echo -e "${N}[${G}+${N}] others : ${G}`wc -l others.txt`${N}"
-                                  echo -n -e "${N}${G}[${N}1${G}]${N} dump lagi\n${N}${G}[${N}2${G}]${N} kembali ke database awal${N}${G}\n[${N}3${G}].${N} kembali\n"
+                                  echo -n -e "${N}${G}[${N}1${G}]${N} dump lagi\n${N}${G}[${N}2${G}]${N} kembali ke database awal${N}${G}\n[${N}3${G}]${N} kembali\n"
                                if [[ "$masn" = "y" ]];then
                                   echo -e "\n${G}\033[2mpress ctrl/vol + D skip to next site${N}"
                                   echo -en "\033[2mmysql@$dbdir/$db_na/ ?? ${G}"
@@ -1405,7 +1405,7 @@ dump() {
                                echo -e "+$coi+\n $co \n+$coi+$O" | sed 's/,/ :: /g'
                                echo -e "$O$cury" | sort -u | uniq -i
                                echo -en "${N}+$coi+\n"
-                               echo -n -e "${N}${G}[${N}1${G}]${N} dump lagi\n${N}${G}[${N}2${G}]${N} kembali ke database awal${N}${G}\n[${N}3${G}].${N} kembali\n"
+                               echo -n -e "${N}${G}[${N}1${G}]${N} dump lagi\n${N}${G}[${N}2${G}]${N} kembali ke database awal${N}${G}\n[${N}3${G}]${N} kembali\n"
                                if [[ "$masn" = "y" ]];then
                                   echo -e "\n${G}\033[2mpress ctrl/vol + D skip to next site${N}"
                                   echo -en "\033[2mmysql@$dbdir/$db_na/ ?? ${G}"
