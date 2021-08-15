@@ -11,6 +11,10 @@ sendiri!!
 Demo!!
 
 
+![Screenshot_2021-08-15_225208](https://user-images.githubusercontent.com/46388169/129484711-46a11a63-f3f2-433d-87d7-6c3965785de8.jpg)
+
+
+
 release 15 agustust 2021
 copyright @K1M4K-ID 
 
