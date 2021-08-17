@@ -2590,7 +2590,8 @@ start(){
                     else
                        sqli
                     fi
-       menu
+		           read -p "$(printf "\033[31;1m[\033[32;1m*\033[31;1m]\033[37;1m Press Enter To Back"'\033[34;1m')" dasdas
+       start
   elif [ $input = "2" ] || [ $input = "02" ];
   then
          clear
@@ -2608,7 +2609,9 @@ start(){
             clear
             logo
             hashid
-            menu
+	    		           read -p "$(printf "\033[31;1m[\033[32;1m*\033[31;1m]\033[37;1m Press Enter To Back"'\033[34;1m')" dasdas
+
+            start
          elif [ $p = "2" ] || [ $p = "02" ];
          then
             clear
@@ -2632,7 +2635,7 @@ start(){
                     echo "Result: $dec"
                   fi
                   read -p "Press Enter for continue " aswkxkkxk
-                  menu
+                  start
 
                elif [ $x = "2" ] || [ $x = "02" ];
                then
@@ -2650,17 +2653,17 @@ start(){
                   fi
                   done
                   read -p "Press Enter for continue " aswkxkkxk
-                  menu
+                  start
 
               else
                 echo "masukan input dengan benar :("
                 sleep 3
-                menu
+                start
               fi
             else
               echo "masukan input dengan benar :("
               sleep 3
-              menu
+              start
           fi
 elif [ $input = "3" ] || [ $input = "03" ];
 then
@@ -2674,7 +2677,8 @@ then
     then
       read -p "$(printf "\033[31;1m[\033[32;1m*\033[31;1m]\033[37;1m target url : "'\033[34;1m')" site
       adminfin
-      menu
+      read -p "$(printf "\033[31;1m[\033[32;1m*\033[31;1m]\033[37;1m Press Enter To Back"'\033[34;1m')" dasdas
+      start
 
      elif [ $x = "2" ] || [ $x = "02" ];
      then
@@ -2685,12 +2689,12 @@ then
        do
           adminfin
        done
-       menu
+       start
 
     else
       echo "masukan input dengan benar :("
       sleep 3
-      menu
+      start
     fi
 elif [ $input = "4" ] || [ $input = "04" ];
 then
@@ -2719,8 +2723,9 @@ then
            echo -e "[${G}+${N}] Result Total : ${G}\033[2m$(cat output/$dir/inject_point.txt 2>/dev/null | wc -l) Sqli vuln${N}"
            echo -e "[${O}!${N}] Result Total : ${O}\033[2m$(cat output/$dir/lfi.txt 2>/dev/null | wc -l) LFI${N}"
            echo -e "[${R}!${N}] Result Total : ${BL}\033[2m$(cat output/$dir/xss.txt 2>/dev/null | wc -l) xss${N}"
-           menu
-
+           read -p "$(printf "\033[31;1m[\033[32;1m*\033[31;1m]\033[37;1m Press Enter To Back"'\033[34;1m')" dasdas
+	   start
+	
           elif [ $x = "2" ] || [ $x = "02" ];
           then
             hekel="y"
@@ -2742,12 +2747,13 @@ then
             echo -e "[${R}!${N}] Result Total : ${BL}\033[2m$(cat output/$dir/xss.txt 2>/dev/null | wc -l) xss${N}"
             done
             trap - INT
-            menu
+            read -p "$(printf "\033[31;1m[\033[32;1m*\033[31;1m]\033[37;1m Press Enter To Back"'\033[34;1m')" dasdas
+	    start
 
          else
            echo "masukan input dengan benar :("
            sleep 3
-           menu
+           start
          fi
 
 
