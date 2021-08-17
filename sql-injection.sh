@@ -2537,16 +2537,10 @@ menu() {
     }' | head -1)
     clear
 logo
-if [[ "$debug" = "s" ]];then
-  echo "developer mode string based"
-  union="%27$union"
-fi
-if [[ "$debug" = "y" ]];then
-   echo -e "${N}[${R}@${N}]. DEBUG MODE: ${R}ON${N}"
-fi
+
 printf "\033[31;1m[\033[32;1m1\033[31;1m]\033[37;1m start site injection \033[31;1m{sqli}\n"
 sleep 0
-printf "\033[31;1m[\033[32;1m2\033[31;1m]\033[37;1m hash password\n"
+printf "\033[31;1m[\033[32;1m2\033[31;1m]\033[37;1m hash password md5\n"
 sleep 0
 printf "\033[31;1m[\033[32;1m3\033[31;1m]\033[37;1m admin finder\n"
 sleep 0
@@ -2600,7 +2594,7 @@ start(){
          sleep 0
          printf "\033[31;1m[\033[32;1m2\033[31;1m]\033[37;1m md5 dencryptor\n"
          sleep 0
-         printf "\033[31;1m[\033[32;1m3\033[31;1m]\033[37;1m md5 email pass dencryptor\n"
+         printf "\033[31;1m[\033[32;1m3\033[31;1m]\033[37;1m md5 email pass dencryptor\n\n"
          sleep 0
          read -p "$(printf "\033[31;1m[\033[32;1m*\033[31;1m]\033[37;1m choice : "'\033[34;1m')" p
          echo
@@ -2616,9 +2610,9 @@ start(){
          then
             clear
             logo
-            printf "\033[31;1m[\033[32;1m1\033[31;1m]\033[37;1m hash md5 biasa \n"
+            printf "\033[31;1m[\033[32;1m1\033[31;1m]\033[37;1m hash md5  \n"
             sleep 0
-            printf "\033[31;1m[\033[32;1m2\033[31;1m]\033[37;1m hash md5 all\n"
+            printf "\033[31;1m[\033[32;1m2\033[31;1m]\033[37;1m hash md5 all\n\n"
             sleep 0
             read -p "$(printf "\033[31;1m[\033[32;1m*\033[31;1m]\033[37;1m choice : "'\033[34;1m')" x
             echo
@@ -2667,9 +2661,9 @@ start(){
           fi
 elif [ $input = "3" ] || [ $input = "03" ];
 then
-  printf "\033[31;1m[\033[32;1m1\033[31;1m]\033[37;1m hash md5 biasa \n"
+  printf "\033[31;1m[\033[32;1m1\033[31;1m]\033[37;1m hash md5  \n"
   sleep 0
-  printf "\033[31;1m[\033[32;1m2\033[31;1m]\033[37;1m hash md5 all\n"
+  printf "\033[31;1m[\033[32;1m2\033[31;1m]\033[37;1m hash md5 all\n\n"
   sleep 0
   read -p "$(printf "\033[31;1m[\033[32;1m*\033[31;1m]\033[37;1m choice : "'\033[34;1m')" x
   echo
@@ -2700,7 +2694,7 @@ elif [ $input = "4" ] || [ $input = "04" ];
 then
        printf "\033[31;1m[\033[32;1m1\033[31;1m]\033[37;1m scaning sqli, xss, lfi \n"
        sleep 0
-       printf "\033[31;1m[\033[32;1m2\033[31;1m]\033[37;1m scaning sqli, xss, lfi all\n"
+       printf "\033[31;1m[\033[32;1m2\033[31;1m]\033[37;1m scaning sqli, xss, lfi all\n\n"
        sleep 0
        read -p "$(printf "\033[31;1m[\033[32;1m*\033[31;1m]\033[37;1m choice : "'\033[34;1m')" x
        echo
