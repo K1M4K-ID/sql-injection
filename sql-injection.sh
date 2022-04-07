@@ -2544,7 +2544,7 @@ printf "\033[31;1m[\033[32;1m2\033[31;1m]\033[37;1m hash password md5\n"
 sleep 0
 printf "\033[31;1m[\033[32;1m3\033[31;1m]\033[37;1m admin finder\n"
 sleep 0
-printf "\033[31;1m[\033[32;1m4\033[31;1m]\033[37;1m sqli,Xss,LFI AdminFinder Scanner\n\n"
+printf "\033[31;1m[\033[32;1m4\033[31;1m]\033[37;1m sqli,Xss,LFI AdminFinder Scanner\n"
 sleep 0
 printf "\033[31;1m[\033[32;1m0\033[31;1m]\033[37;1m exit\n\n"
 sleep 0
