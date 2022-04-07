@@ -2546,6 +2546,8 @@ printf "\033[31;1m[\033[32;1m3\033[31;1m]\033[37;1m admin finder\n"
 sleep 0
 printf "\033[31;1m[\033[32;1m4\033[31;1m]\033[37;1m sqli,Xss,LFI AdminFinder Scanner\n\n"
 sleep 0
+printf "\033[31;1m[\033[32;1m0\033[31;1m]\033[37;1m exit\n\n"
+sleep 0
 read -p "$(printf "\033[31;1m[\033[32;1m*\033[31;1m]\033[37;1m choice : "'\033[34;1m')" input
 echo
 }
@@ -2750,7 +2752,9 @@ then
            start
          fi
 
-
+elif [ $input = "0" ] || [ $input = "00" ];
+then
+	exit
 fi
 }
 
